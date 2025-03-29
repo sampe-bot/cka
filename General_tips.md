@@ -1,4 +1,4 @@
-# How to write code for "nslookup" in Pod to see another Pod, Service about DNS.
+# How to write code for "nslookup" in Pod to connect another Pod, Service about DNS.
 ```
 k run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup <SVC PORT> 
 ```
