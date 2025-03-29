@@ -1,6 +1,20 @@
 # Mock Exam 2
+## Deploy a Horizontal Pod Autoscaler (HPA).
+### Position of "metrics" in yaml.
+[Ref](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/#:~:text=Open%20the%20/tmp/hpa%2Dv2.yaml%20file%20in%20an%20editor%2C%20and%20you%20should%20see%20YAML%20which%20looks%20like%20this%3A)
+```
+spec:
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
+```
+
 ## Deploy a Vertical Pod Autoscaler (VPA).
-### Solution
+### Solution.
 ```
 apiVersion: autoscaling.k8s.io/v1
 kind: VerticalPodAutoscaler
