@@ -15,7 +15,7 @@ Create clusterrole
 ```
 kubectl create clusterrole pvviewer-role  --resource=persistentvolumes --verb=list
 ```
-Create clusterrolebinding, --serviceaccount=<Namespace>:<Serviceaccount-name>
+Create clusterrolebinding, サービスアカウントを有効化するため、```--serviceaccount=<Namespace>:<Serviceaccount-name>```を追加
 ```
 kubectl create clusterrolebinding pvviewer-role-binding --clusterrole=pvviewer-role --serviceaccount=default:pvviewer
 ```
