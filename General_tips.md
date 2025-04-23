@@ -1,6 +1,6 @@
 # How to write code for "nslookup" in Pod to connect another Pod, Service about DNS.
 ```
-k run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup <SVC PORT> 
+k run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup <SVC NAME> 
 ```
 - ```--rm``` : Pod終了後、自動削除
 - ```-it``` : インタラクティブにコンテナ内でコマンドを実行可能
