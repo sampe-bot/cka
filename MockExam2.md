@@ -28,6 +28,26 @@ spec:
     name: multi-container-deployment
   updatePolicy:
     updateMode: "Auto"
+
+## Gateway, hostname, tlsの記述方法
+```
+# web-gateway.yaml
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: web-gateway
+  namespace: cka5673
+spec:
+  gatewayClassName: kodekloud
+  listeners:
+    - name: https
+      protocol: HTTPS
+      port: 443
+      hostname: kodekloud.com
+      tls:
+        certificateRefs:
+          - name: kodekloud-tls
+```
   resourcePolicy:
     containerPolicies:
     - containerName: backend-app
