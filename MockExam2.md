@@ -29,6 +29,7 @@ spec:
   updatePolicy:
     updateMode: "Auto"
 
+```
 ## Gateway, hostname, tlsの記述方法
 ```
 # web-gateway.yaml
@@ -47,7 +48,6 @@ spec:
       tls:
         certificateRefs:
           - name: kodekloud-tls
-```
   resourcePolicy:
     containerPolicies:
     - containerName: backend-app
