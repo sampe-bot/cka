@@ -28,6 +28,12 @@ spec:
     name: multi-container-deployment
   updatePolicy:
     updateMode: "Auto"
+  resourcePolicy:
+    containerPolicies:
+    - containerName: backend-app
+      mode: Auto
+    - containerName: frontend-app
+      mode: "Off"
 
 ```
 ## Gateway, hostname, tlsの記述方法
@@ -48,10 +54,4 @@ spec:
       tls:
         certificateRefs:
           - name: kodekloud-tls
-  resourcePolicy:
-    containerPolicies:
-    - containerName: backend-app
-      mode: Auto
-    - containerName: frontend-app
-      mode: "Off"
 ```
