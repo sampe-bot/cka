@@ -16,3 +16,7 @@ To know Internal IP Address
 ```
 kubectl get nodes -o jsonpath='{items[*].status.addresses[0].address}'
 ```
+# ファイル内文字列の全置換
+```
+sed 's/旧文字列/新文字列/g' ファイル名
+```
