@@ -8,9 +8,9 @@ k run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nslookup <S
 
 # How to find jsonpath of node info
 ```
-kubectl get nodes -o json | jq | -c 'paths' <INFOMATION YOU'D LIKE TO KNOW>
+kubectl get nodes -o json | jq -c 'paths' <INFOMATION YOU'D LIKE TO KNOW>
 # ex
-kubectl get nodes -o json | jq | -c 'paths' | grep type | grep -v condition
+kubectl get nodes -o json | jq -c 'paths' | grep type | grep -v condition
 ```
 To know Internal IP Address
 ```
