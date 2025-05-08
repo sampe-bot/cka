@@ -83,3 +83,23 @@ spec:
           weight: 20
 EOF
 ```
+# Adjust the following network parameters on the system to the following values, and make sure your changes persist reboots
+- 設定出来たかどうかの確認
+```
+sysctl net.ipv4.ip_forward # ex1
+sysctl net.bridge.bridge-nf-call-iptables # ex1
+```
+- 設定ファイル
+```/etc/sysctl.d/k8s.conf```を編集する
+sudo nano /etc/sysctl.d/k8s.confで開く or catを使用する
+```
+# catを使用する場合
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.ipv4.ip_forward = 1
+EOF
+```
+再起動せずに設定ファイルを反映させる
+```
+sudo sysctl --system
+```
+
